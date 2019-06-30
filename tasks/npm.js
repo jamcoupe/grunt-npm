@@ -17,6 +17,16 @@ module.exports = function(grunt) {
     });
   });
 
+  grunt.registerTask('npm-bump', 'Bump up the version', function(type) {
+    type = type || 'patch';
+    var done = this.async();
+
+    exec('npm version ' + type + ' -m "Release %s"', function(err, result) {
+      if (err) throw err;
+      console.log(result);
+      done();
+    });
+  });
 
   /**
    * Publish to NPM

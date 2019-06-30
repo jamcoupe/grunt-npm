@@ -9,10 +9,9 @@ module.exports = (grunt) ->
         access: "public"
 
   grunt.loadTasks 'tasks'
-  grunt.loadNpmTasks 'grunt-bump'
 
   grunt.registerTask 'release', 'Build, bump and publish to NPM.', (type) ->
     grunt.task.run [
-      "bump:#{type||'patch'}"
+      "npm-bump:#{type ? 'patch'}"
       'npm-publish'
     ]
