@@ -23,6 +23,7 @@ module.exports = function(grunt) {
    */
   grunt.registerTask('npm-publish', 'Publish to NPM.', function() {
     var opts = this.options({
+      access: 'restricted',
       requires: [],
       abortIfDirty: true,
       tag: null
@@ -62,7 +63,12 @@ module.exports = function(grunt) {
         tag = tag();
       }
 
-      exec('npm publish' + (tag ? ' --tag ' + tag : ''), function(err) {
+      var access = opts.access;
+      if (typeof access === 'function') {
+        access = access();
+      }
+
+      exec('npm publish' + (tag ? ' --tag ' + tag : '') + (access ? ' --access ' + access : ''), function(err) {
         if (err) {
           return grunt.fatal(err.message.replace(/\n$/, '.'));
         }

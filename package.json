@@ -1,5 +1,5 @@
 {
-  "name": "grunt-npm",
+  "name": "@jcoup/grunt-npm",
   "version": "0.0.2",
   "description": "A set of helpers for dealing with NPM from Grunt.",
   "bugs": {
@@ -16,7 +16,7 @@
   "author": "Vojta Jína <vojta.jina@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-bump": "0.0.3"
+    "grunt": "1.0.4",
+    "grunt-bump": "0.8.0"
   }
 }
