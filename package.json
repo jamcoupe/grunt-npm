@@ -1,6 +1,6 @@
 {
   "name": "@jcoup/grunt-npm",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A set of helpers for dealing with NPM from Grunt.",
   "bugs": {
     "url": "https://github.com/vojtajina/grunt-npm/issues"
